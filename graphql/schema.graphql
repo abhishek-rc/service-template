@@ -1,1 +1,11 @@
+type Query {
+  quotes: [Quote]
+}
 
+type Quote {
+  id: ID!
+  customerName: String!
+  email: String!
+  message: String!
+  createdAt: String!
+}
