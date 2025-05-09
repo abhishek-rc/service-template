@@ -5,15 +5,24 @@
   "title": "Backend Course",
   "description": "Reference app for the Backend Course",
   "builders": {
+    "graphql": "1.x",
     "node": "6.x"
   },
   "scripts": {
     "prereleasy": "bash lint.sh"
   },
   "credentialType": "absolute",
-  "policies": [],
-  "dependencies": {
-    "vtex.events-example": "0.x"
-  },
+  "policies": [
+    {
+      "name": "ADMIN_DS"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "royalcyber.vtexcommercestable.com.br",
+        "path": "/api/dataentities/*"
+      }
+    }
+  ],
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }
